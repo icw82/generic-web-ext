@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./sources",
+        "module": "ESNext",
+        "target": "ESNext",
+    },
+    "include": [
+        "./**/*"
+    ]
+}

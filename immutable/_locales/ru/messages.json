@@ -1,0 +1,8 @@
+{
+    "ext_name": {
+        "message": "generic-web-ext"
+    },
+    "ext_description": {
+        "message": "Тестовое базовое расширение"
+    }
+}
