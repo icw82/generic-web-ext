@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
     "name": "Generic Web Extension",
     "short_name": "gwe",
     "version": "::version::",
+    "manifest_version": 3,
 
     "default_locale": "ru",
     "description": "__MSG_ext_description__",
@@ -10,18 +10,20 @@
     "author": "::author::",
 
     "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": true
+        "service_worker": "background.js",
+        "type": "module"
     },
 
     "permissions": [
         "storage",
         "management",
         "unlimitedStorage",
-        "downloads",
-        "https://icw82.ru/*"
+        "downloads"
+    ],
+
+    "host_permissions": [
+        "https://icw82.ru/*",
+        "https://online.sbis.ru/*"
     ],
 
     "options_ui": {
@@ -31,8 +33,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://icw82.ru/*",
-                "*://online.sbis.ru/*"
+                "https://icw82.ru/*",
+                "https://online.sbis.ru/*"
             ],
             "css": [
                 "main.css"
@@ -44,10 +46,10 @@
         }
     ],
 
-    "web_accessible_resources": [
-        "modules/*",
-        "main.js"
-    ],
+    "web_accessible_resources": [{
+        "resources": [ "modules/*", "main.js" ],
+        "matches": [ "https://icw82.ru/*" ]
+    }],
 
-    "minimum_chrome_version": "85"
+    "minimum_chrome_version": "92"
 }

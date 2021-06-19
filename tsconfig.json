@@ -1,10 +1,16 @@
 {
     "compilerOptions": {
         "baseUrl": "./sources",
-        "module": "ESNext",
-        "target": "ESNext",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "target": "ESNext"
     },
     "include": [
-        "./**/*"
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        ".vscode"
     ]
 }
